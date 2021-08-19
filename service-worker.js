@@ -3,6 +3,13 @@ chrome.action.onClicked.addListener((tab) => {
   chrome.scripting
     .executeScript({
       target: { tabId: tab.id },
+      files: ["utils/zip-fs-full.min.js"],
+    })
+    .then(() => console.log("loaded zip library"));
+
+  chrome.scripting
+    .executeScript({
+      target: { tabId: tab.id },
       files: ["foreground.js"],
     })
     .then(() => console.log("Finished zipping"));

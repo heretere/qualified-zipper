@@ -13,23 +13,9 @@
   "permissions": [
     "activeTab",
     "scripting",
-    "downloads",
-    "tabs"
-  ],
-  "host_permissions": [
-    "*://*/*"
+    "downloads"
   ],
   "background": {
     "service_worker": "service-worker.js"
-  },
-  "content_scripts": [
-    {
-      "js": [
-        "utils/zip-fs-full.min.js"
-      ],
-      "matches": [
-        "*://*.qualified.io/*"
-      ]
-    }
-  ]
+  }
 }
