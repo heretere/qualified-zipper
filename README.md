@@ -10,8 +10,8 @@ qualified-attach is down and I am tired of manually creating these projects
 
 ## Usage
 
-1. Download Latest CRX file from [Releases](https://github.com/heretere/qualified-zipper/releases)
-2. Go to `chrome://extensions` or `edge://extensions` or any other chromium-based browser's extensions page
-3. Drag the CRX file onto the page and install it
-4. Go to your Qualified Assessment and click on the Qualified Zipper extension icon in the top right and wait
+1. [Clone the REPO](https://github.com/heretere/qualified-zipper/archive/refs/heads/master.zip)
+2. Unzip it somewhere
+3. follow this 30 second video [How to install unpacked extension in chrome](https://www.youtube.com/watch?v=oswjtLwCUqg)
+4. Go to the qualified assessment and click on the Qualified Zipper icon in the top right
 5. Enjoy :)
