@@ -2,7 +2,7 @@
 
 ### Description
 
-Qualified Zipper is a chrome extension with the purpose of zipping up a distribution hosted on https://qualified.io
+Qualified Zipper is a chromium-based extension with the purpose of zipping up a distribution hosted on https://qualified.io
 
 ### Why?
 
