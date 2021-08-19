@@ -1,6 +1,11 @@
 (async () => {
+  //Check if on qualified site
+  if (!window.location.hostname.includes("qualified")) {
+    alert("You can only use Qualified Zipper on Qualified");
+    return;
+  }
+
   //Check if zip reference has been defined
-  //If not page refresh is needed
   if (typeof zip === "undefined") {
     alert("Refresh page to use Qualified Zipper");
     return;
