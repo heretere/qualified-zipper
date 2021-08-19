@@ -1,12 +1,25 @@
-// This is the service worker script, which executes in its own context
-// when the extension is installed or refreshed (or when you access its console).
-// It would correspond to the background script in chrome extensions v2.
+//listen for when extension button is clicked
+chrome.action.onClicked.addListener((tab) => {
+  chrome.scripting
+    .executeScript({
+      target: { tabId: tab.id },
+      files: ["foreground.js"],
+    })
+    .then(() => console.log("Finished zipping"));
+});
 
-console.log("This prints to the console of the service worker (background script)")
-
-// Importing and using functionality from external files is also possible.
-importScripts('service-worker-utils.js')
-
-// If you want to import a file that is deeper in the file hierarchy of your
-// extension, simply do `importScripts('path/to/file.js')`.
-// The path should be relative to the file `manifest.json`.
+//listener for a message that comes from foreground.js
+//this tells Qualified Zipper to download the zipped file
+chrome.runtime.onMessage.addListener(({ url, filename }) => {
+  if (filename.endsWith(".zip")) {
+    chrome.downloads.download({
+      url,
+      filename: filename ? filename : undefined,
+    });
+  } else {
+    chrome.downloads.download({
+      url,
+      filename: filename ? filename + ".zip" : undefined,
+    });
+  }
+});
